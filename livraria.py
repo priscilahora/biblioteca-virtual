@@ -1,5 +1,3 @@
-
-# Dicionário que contém os anos de lançamento, quantidade de páginas e autores de 25 livros
 livraria = {
     'Dom Casmurro': {'ano': 1899, 'paginas': 256, 'autor': 'Machado de Assis'},
     'Harry Potter E A Pedra Filosofal': {'ano': 1997, 'paginas': 223, 'autor': 'J.K. Rowling'},
@@ -28,10 +26,8 @@ livraria = {
   'Código Limpo': {'ano': 2009, 'paginas': 425, 'autor': 'Robert C. Martin'},
 }
 
-# Contador que servirá como controle da quantidade de livros selecionados pelo usuário
 num_livros = 0
 
-# Lista vazia criada com o intuito de guardar os livros escolhidos posteriormente
 livros_selecionados = []
 
 print("Seja bem-vindo(a) à nossa livraria pública!")
@@ -43,19 +39,16 @@ print("{}, antes de nos dizer o que você está buscando, é preciso ressaltar q
 
 escolha = int(input("Você deseja retirar quantos livros? "))
 
-# Laço responsável por assegurar que serão escolhidos até 3 livros
 while escolha > 3:
   print("Você só pode pegar até 3 livros. Tente novamente! ")
   escolha = int(input("Você deseja pegar quantos livros? "))
   if escolha <= 3:
     break
 
-# Laço que repete a pergunta a partir do número que o usuário indicar
 while num_livros < 3 and num_livros < escolha:
   livro = input("Digite o título do livro desejado: ")
   livro = livro.strip().title()
 
-# Condição que percorre o dicionário criado à procura do título inserido e, em caso de correspondência, organiza as informações do livro e adiciona ele na lista criada por meio do .append
   if livro in livraria:
    livro_selecionado = {
     'nome': livro,
@@ -78,7 +71,6 @@ import time
 
 print("{}, aqui está sua ficha cadastral!".format(nome))
 
-# São imprimidas na tela as informações que o usuário inseriu e os dados dos livros que estão presentes no dicionário 'livraria'
 print("\n-----------------")
 print("Nome: {}".format(nome))
 print("Endereço: {}".format(endereco))
